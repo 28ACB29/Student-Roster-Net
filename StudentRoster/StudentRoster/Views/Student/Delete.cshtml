@@ -1,0 +1,68 @@
+﻿@model StudentRoster.Models.Student
+
+@{
+	ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+	<h4>Student</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.SchoolYear)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.SchoolYear)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Campus)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Campus)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.EntryDate)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.EntryDate)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.GradeLevel)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.GradeLevel)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+
+	</dl>
+
+	@using (Html.BeginForm("Delete", "Student", FormMethod.Post))
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-actions no-color">
+			<input type="submit" value="Delete" class="btn btn-default" /> |
+			@Html.ActionLink("Back to List", "Index", "Student", null, htmlAttributes: new
+			{
+				@class = "btn btn-default"
+			})
+		</div>
+	}
+</div>

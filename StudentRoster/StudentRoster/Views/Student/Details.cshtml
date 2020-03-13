@@ -1,0 +1,70 @@
+﻿@model StudentRoster.Models.Student
+
+@{
+				/**/
+
+				ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+	<h4>Student</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.SchoolYear)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.SchoolYear)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Campus)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Campus)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.EntryDate)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.EntryDate)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.GradeLevel)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.GradeLevel)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Name)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Name)
+		</dd>
+
+	</dl>
+</div>
+<p>
+	@Html.ActionLink("Edit", "Edit", "Student", new
+	{
+		id = Model.StudentID
+	},
+	htmlAttributes: new
+	{
+		@class = "btn btn-default"
+	}) |
+	@Html.ActionLink("Back to List", "Index", "Student", null, htmlAttributes: new
+	{
+		@class = "btn btn-default"
+	})
+</p>

@@ -1,0 +1,33 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+	<h1>Student Roster Application</h1>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		@Html.ActionLink("View Roster", "Index", "Student", null, htmlAttributes: new
+		{
+			@class = "btn btn-default"
+		})
+	</div>
+	<div class="col-md-12">
+		@using(@Html.BeginForm("Index", "Home", FormMethod.Post, new
+		{
+			enctype = "multipart/form-data"
+		}))
+		{
+			@Html.ValidationSummary();
+			<input type="file" id="fileToUpload" name="file" accept=".csv" />
+			<input type="submit" value="Upload Roster" class = "btn btn-default" />
+		}
+	</div>
+	<div class="col-md-12">
+		@Html.ActionLink("Download Roster", "Download", "Home", null, htmlAttributes: new
+		{
+			@class = "btn btn-default"
+		})
+	</div>
+</div>
